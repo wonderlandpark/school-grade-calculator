@@ -1,18 +1,21 @@
-import { ColorModeScript } from "@chakra-ui/react"
-import * as React from "react"
-import * as ReactDOM from "react-dom/client"
-import { App } from "./App"
-import reportWebVitals from "./reportWebVitals"
-import * as serviceWorker from "./serviceWorker"
+import { ColorModeScript } from '@chakra-ui/react'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom/client'
+import { RecoilRoot } from 'recoil'
+import { App } from './App'
+import reportWebVitals from './reportWebVitals'
+import * as serviceWorker from './serviceWorker'
 
-const container = document.getElementById("root")
-const root = ReactDOM.createRoot(container)
+const container = document.getElementById('root')
+const root = ReactDOM.createRoot(container as Element)
 
 root.render(
   <React.StrictMode>
-    <ColorModeScript />
-    <App />
-  </React.StrictMode>,
+    <RecoilRoot>
+      <ColorModeScript />
+      <App />
+    </RecoilRoot>
+  </React.StrictMode>
 )
 
 // If you want your app to work offline and load faster, you can change
