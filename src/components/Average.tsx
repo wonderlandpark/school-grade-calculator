@@ -21,8 +21,8 @@ const Average = () => {
         <Thead>
           <Tr>
             <Th>과목명 (선택)</Th>
-            <Th>등급</Th>
-            <Th>단위수</Th>
+            <Th>등급 (1~9)</Th>
+            <Th>이수 단위수</Th>
             <Th />
           </Tr>
         </Thead>
