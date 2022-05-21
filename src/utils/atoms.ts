@@ -22,6 +22,11 @@ export const subjects = atom<Subject[]>({
   ],
 })
 
+export const rank = atom<Rank>({
+  key: 'rank',
+  default: { rank: 1, equal: 0 },
+})
+
 export const studentGarde = selector<number[]>({
   key: 'studentGarde',
   get: ({ get }) => {
@@ -40,8 +45,20 @@ export const subjectsAverage = selector<number>({
   },
 })
 
+export const finalRank = selector<number>({
+  key: 'finalRank',
+  get: ({ get }) => {
+    const rankData = get(rank)
+    return rankData.rank + (rankData.equal >= 2 ? rankData.equal - 1 : 0)/2
+}
+})
 interface Subject {
   name: string
   grade: number
   unit: number
+}
+
+interface Rank {
+  rank: number
+  equal: number
 }

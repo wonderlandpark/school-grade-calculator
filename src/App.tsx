@@ -17,6 +17,7 @@ import { studentTotal, subjectsAverage } from './utils/atoms'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import Grade from './components/Grade'
 import Average from './components/Average'
+import Rank from './components/Rank'
 
 export const App = () => {
   const [student, setStudent] = useRecoilState(studentTotal)
@@ -40,9 +41,9 @@ export const App = () => {
           />{' '}
           명
           <Box px={{ base: 10, xl: 100 }}>
-            <Code>실제 결과와 차이가 있을 수 있습니다.</Code>
+            <Code>실제 결과와 차이가 있을 수 있습니다. 참고용으로만 이용해주세요.</Code>
             <Grade />
-
+            <Rank />
             <Heading pt={32} pb={5} fontSize="2xl" textAlign="left">
               등급 평점 계산하기
             </Heading>
